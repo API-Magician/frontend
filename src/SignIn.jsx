@@ -41,6 +41,7 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
     padding: theme.spacing(4),
   },
   "&::before": {
+    // the background
     content: '""',
     display: "block",
     position: "absolute",
@@ -56,20 +57,12 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
   },
 }));
 
-export default function SignIn(props) {
+export default function SignIn() {
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState("");
   const [passwordError, setPasswordError] = React.useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState("");
   const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const handleSubmit = (event) => {
     if (emailError || passwordError) {
@@ -141,7 +134,6 @@ export default function SignIn(props) {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="your@email.com"
                 autoComplete="email"
                 autoFocus
                 required
@@ -156,7 +148,6 @@ export default function SignIn(props) {
                 error={passwordError}
                 helperText={passwordErrorMessage}
                 name="password"
-                placeholder="••••••"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -180,32 +171,9 @@ export default function SignIn(props) {
             >
               Sign in
             </Button>
-            <Link
-              component="button"
-              type="button"
-              onClick={handleClickOpen}
-              variant="body2"
-              sx={{ alignSelf: "center" }}
-            >
-              Forgot your password?
-            </Link>
           </Box>
           <Divider>or</Divider>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <Button
-              fullWidth
-              variant="outlined"
-              onClick={() => alert("Sign in with Google")}
-            >
-              Sign in with Google
-            </Button>
-            <Button
-              fullWidth
-              variant="outlined"
-              onClick={() => alert("Sign in with Facebook")}
-            >
-              Sign in with Facebook
-            </Button>
             <Typography sx={{ textAlign: "center" }}>
               Don&apos;t have an account?{" "}
               <Link variant="body2" sx={{ alignSelf: "center" }}>
