@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import axios from "axios";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
@@ -71,18 +71,18 @@ export default function SignIn() {
     if (emailError || passwordError) {
       return;
     }
-    
-    
-      
-        
-        
-     
-      
-        
-      
-      
-        
-      
+    console.log({ email, password });
+    axios
+      .post("http://localhost:3000/login", {
+        email,
+        password,
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   const validateInputs = () => {
