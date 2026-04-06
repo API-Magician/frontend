@@ -1,4 +1,5 @@
-import * as React from "react";
+import { useState } from "react";
+
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
@@ -58,22 +59,30 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
 }));
 
 export default function SignIn() {
-  const [emailError, setEmailError] = React.useState(false);
-  const [emailErrorMessage, setEmailErrorMessage] = React.useState("");
-  const [passwordError, setPasswordError] = React.useState(false);
-  const [passwordErrorMessage, setPasswordErrorMessage] = React.useState("");
-  const [open, setOpen] = React.useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     if (emailError || passwordError) {
-      event.preventDefault();
       return;
     }
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    
+    
+      
+        
+        
+     
+      
+        
+      
+      
+        
+      
   };
 
   const validateInputs = () => {
@@ -129,6 +138,7 @@ export default function SignIn() {
             <FormControl>
               <FormLabel htmlFor="email">Email</FormLabel>
               <TextField
+                onChange={(e) => setEmail(e.target.value)}
                 error={emailError}
                 helperText={emailErrorMessage}
                 id="email"
@@ -145,6 +155,7 @@ export default function SignIn() {
             <FormControl>
               <FormLabel htmlFor="password">Password</FormLabel>
               <TextField
+                onChange={(e) => setPassword(e.target.value)}
                 error={passwordError}
                 helperText={passwordErrorMessage}
                 name="password"
