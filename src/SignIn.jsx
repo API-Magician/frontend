@@ -79,6 +79,7 @@ export default function SignIn() {
       })
       .then(function (response) {
         console.log(response);
+        localStorage.setItem("jwt_token", response.data.token);
       })
       .catch(function (error) {
         console.log(error);
