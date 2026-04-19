@@ -82,7 +82,7 @@ export default function SignIn() {
         localStorage.setItem("jwt_token", response.data.token);
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response?.data?.message);
       });
   };
 
