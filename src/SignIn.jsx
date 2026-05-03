@@ -8,12 +8,15 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Divider from "@mui/material/Divider";
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
-import Link from "@mui/material/Link";
+import { Link as MuiLink } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import MuiCard from "@mui/material/Card";
 import { styled } from "@mui/material/styles";
+
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -188,9 +191,9 @@ export default function SignIn() {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <Typography sx={{ textAlign: "center" }}>
               Don&apos;t have an account?{" "}
-              <Link variant="body2" sx={{ alignSelf: "center" }}>
+              <MuiLink variant="body2" sx={{ alignSelf: "center" }}>
                 Sign up
-              </Link>
+              </MuiLink>
             </Typography>
           </Box>
         </Card>
