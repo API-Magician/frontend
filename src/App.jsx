@@ -1,6 +1,6 @@
-import SignIn from "./SignIn";
-import SignUp from "./SignUp.jsx";
-import Error from "./Error.jsx";
+import SignIn from "./pages/SignIn.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import Error from "./pages/Error.jsx";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "./theme.jsx";
 import { Routes, Route, Navigate } from "react-router-dom";
