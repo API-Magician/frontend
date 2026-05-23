@@ -49,12 +49,8 @@ export default function Error() {
         alignItems: "center",
         justifyContent: "center",
         p: 4,
-        backgroundImage: `
-          radial-gradient(ellipse 60% 40% at 50% 0%, ${PURPLE[600]}12, transparent),
-          linear-gradient(${theme.palette.surface.border} 1px, transparent 1px),
-          linear-gradient(90deg, ${theme.palette.surface.border} 1px, transparent 1px)
-        `,
         backgroundSize: "100% 100%, 40px 40px, 40px 40px",
+        background: theme.palette.surface.bgGradient,
       }}
     >
       <Box sx={{ width: "100%", maxWidth: 560 }}>

@@ -24,6 +24,8 @@ const SURFACE = {
   overlay: "#18181f", // modals, popovers
   border: "#ffffff14", // subtle border
   borderHover: "#ffffff22",
+  bgGradient:
+    "radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))",
 };
 
 const theme = createTheme({
